@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types'
 
-const BlogList = ({blogs, title}) => {
+const BlogList = ({blogs, title, handleDelete}) => {
   
   // const blogs = props.blogs;
   // const title = props.title;
@@ -13,6 +13,7 @@ const BlogList = ({blogs, title}) => {
         <div className="blog-preview" key={blog.id}>
           <h2>{blog.title}</h2>
           <p>Writen by {blog.author}</p>
+          <button onClick={() => handleDelete(blog.id)}>delete blog</button>
         </div>
       ))}
 
@@ -22,6 +23,7 @@ const BlogList = ({blogs, title}) => {
  
 BlogList.propTypes = {
   blogs: PropTypes.array.isRequired,
-  title: PropTypes.string
+  title: PropTypes.string,
+  handleDelete: PropTypes.func
 }
 export default BlogList;
