@@ -1,4 +1,7 @@
 # React + Vite
+# To start json-server:
+* open different terminal and type:
+* npx json-server --watch data/db.json --port 8000
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
