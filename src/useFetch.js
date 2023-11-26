@@ -7,6 +7,8 @@ const useFetch = (url) => {
   const [error, setError] = useState(null);
   
   useEffect(() => {
+    
+    
     fetch(url)
     .then(res => {
       if (!res.ok) {
@@ -24,6 +26,7 @@ const useFetch = (url) => {
       console.error('** Data fetching error: ', err.message)
       setError(err.message);
     });
+    
   }, [url]);
   
   return { data, isPending, error }
